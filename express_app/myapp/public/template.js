@@ -10,6 +10,8 @@ let Tclasses = [
     ['CSE Elective', 'CSE ELective', 'Free Elective', 'Algorithms'],
     ['University Core requirement','CSE Elective', 'CSE Elective', 'Ethical and Professional Issues' ],
 ]   
+
+let Labels = ['Freshman Fall', 'Freshman Spring','Sophomore Fall', 'Sophomore Spring', 'Junior Fall', 'Junior Spring', 'Senior Fall', 'Senior Spring'];
     ul = document.createElement('ul');
 
 //ument.getElementById('templateArea').appendChild('')
@@ -18,10 +20,16 @@ para.innerText = "Test text";
 document.body.appendChild(para);
 
 document.getElementById('templateArea').appendChild(ul);
+let i = 0;
 
 Tclasses.forEach(function (item) {
+    let header = document.createElement('h3');
+    header.innerHTML = Labels[i];
+    ul.appendChild(header);
+
     let li = document.createElement('li');
     ul.appendChild(li);
 
     li.innerHTML += item;
+    i += 1;
 });
