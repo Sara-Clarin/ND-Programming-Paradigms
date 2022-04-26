@@ -6,16 +6,68 @@ block content
   p by Sara Clarin and Josh Agron
   hr(size= "6" color="black")
   style.
-      .flex-container {
-      display: flex;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+    /* Dropdown Button */
+    .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    }
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+    /* Links inside the dropdown */
+    .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    .flex-container {
+        display: flex;
       }
       .flex-child {
-      flex: 1;
-      border: 1px solid blue;
+        flex: 1;
+        border: 1px solid blue;
       }
-      .flex-child:first-child {
-      margin-right: 20px;
+      .flex-child: first-child {
+        margin-right: 20px;
       }
+  body
+    #selectDegree.dropdown(onchange='update()')
+      button.dropbtn Select Degree Menu
+      |   
+      .dropdown-content
+        a(href='#') Computer Science
+        |     
+        a(href='#') Computer Engineering
+        |     
+        a(href='#') Electrical Engineering
+  
+    p
+    | Degree selected:
+    span.output  
   body(style='background-color:lightblue;')
   button(name='Originalbutton', type='button', style='margin: 16px; padding: 16px; background-color: darkblue; color: aliceblue; border: none;border-radius: 4px;font-size: 12px') Original Schedule 
 
@@ -28,6 +80,20 @@ block content
     #templateArea.flex-child(name='originalArea')
       | Drag and Drop Courses below
 
+
+
+  script.
+    function update() {
+      let output = document.getElementById("selectDegree").value;
+    //let output = document.querySelector('#selectDegree').value;
+    // selectElement = document.querySelector('#selectDegree');
+    //output = selectElement.options[selectElement.selectedIndex].value;
+    document.querySelector('.output').textContent = output ;
+    alert("weve updated");
+    console.log(output);
+    //document.getElementById('SelectedLabel').innerHTML =value; }
+    }
+    update();
   script(src='./template.js').
 
   

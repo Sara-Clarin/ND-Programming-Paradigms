@@ -33,3 +33,9 @@ Tclasses.forEach(function (item) {
     li.innerHTML += item;
     i += 1;
 });
+
+let value = document.querySelector('#selectDegree').value;
+console.log(value);
+
+fetch('./CSEDegree.txt');
+
