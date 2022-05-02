@@ -1,5 +1,4 @@
 
-
 let Tclasses = [
         ['University Core Requirement', 'Engineering Design', 'Intro to Chemical Principles', 'Calculus 1', 'Moreau FYS'],['University Core Requirement', 
     'Engineering Computing', 'Moreau FYS', 'Calculus 2', 'Physics 1'], 
@@ -11,13 +10,93 @@ let Tclasses = [
     ['University Core requirement','CSE Elective', 'CSE Elective', 'Ethical and Professional Issues' ],
 ]   
 
+
 let Labels = ['Freshman Fall', 'Freshman Spring','Sophomore Fall', 'Sophomore Spring', 'Junior Fall', 'Junior Spring', 'Senior Fall', 'Senior Spring'];
     ul = document.createElement('ul');
+
+
+function update(){
+	let output = document.getElementById("selectDegree").value;
+	const container = document.getElementById("templateArea");
+	container.innerHTML = "";
+
+	let x = 0;
+	if(output == 'CSE'){
+		fetch('./CSEDegree.txt').then( response=>  {
+			classes = response.text().then( function (mydata){
+				const res = mydata.split(/\r?\n/);
+				console.log(res);
+
+				for(let i = 0; i < res.length-1; i++){
+					if(res[i] === ''){
+						let h3 = document.createElement("h3");
+						let node = document.createTextNode(Labels[x]);
+						h3.appendChild(node);
+						container.appendChild(h3);
+						x++;
+						continue;
+					}
+					let li = document.createElement("li");
+					let node = document.createTextNode(res[i]);
+					li.appendChild(node);
+					container.appendChild(li);
+				}
+			})
+		})
+	} else if(output == 'CPEG'){
+		fetch('./CPEGDegree.txt').then( response=>  {
+			console.log("reading CPEGDEGREE!");
+			classes = response.text().then(function (mydata){
+				const res = mydata.split(/\r?\n/);
+				console.log(res);
+				
+				for(let i = 0; i < res.length-1; i++){
+					if(res[i] === ''){
+						let h3 = document.createElement("h3");
+						let node = document.createTextNode(Labels[x]);
+						h3.appendChild(node);
+						container.appendChild(h3);
+						x++;
+						continue;
+					}
+					let li = document.createElement("li");
+					let node = document.createTextNode(res[i]);
+					li.appendChild(node);
+					container.appendChild(li);
+				}
+			})
+		})
+	} else if(output == 'EE'){
+		fetch('./EEDegree.txt').then( response=>  {
+			console.log("reading EEDEGREE!");
+			classes = response.text().then(function(mydata){
+				const res = mydata.split(/\r?\n/);
+				console.log(res);
+
+				for(let i = 0; i < res.length-1; i++){
+					if(res[i] === ''){
+						let h3 = document.createElement("h3");
+						let node = document.createTextNode(Labels[x]);
+						h3.appendChild(node);
+						container.appendChild(h3);
+						x++;
+						continue;
+					}
+					let li = document.createElement("li");
+					let node = document.createTextNode(res[i]);
+					li.appendChild(node);
+					container.appendChild(li);
+				}
+			})
+		})
+	}
+}
+
 
 //ument.getElementById('templateArea').appendChild('')
 const para = document.createElement('p');
 para.id = "output"
-para.innerText = "Test text";
+//para.innerText = "Test text";
 document.body.appendChild(para);
 
 document.getElementById('templateArea').appendChild(ul);
@@ -28,26 +107,8 @@ console.log(value);
 
 let classes = []
 const container = document.getElementById("templateArea");
-if (value == 'CSE'){
-    fetch('./CSEDegree.txt').then( response=>  {
-        console.log("reading CSEDEGREE!")
-        classes = response.text().then( function (mydata){
-        console.log(mydata)
         
-        for (let i = 0; i < mydata.length; i ++) {
-            console.log(classes[i]);
-            let li = document.createElement("li");
-            let node = document.createTextNode(mydata[i]);
-            li.appendChild(node);
-            container.appendChild(li);
-        }
-    })
-
-    })
-}else if (value == 'CPEG'){
-    console.log("fetching CPEG file");
-
-}
+  /*
 Tclasses.forEach(function (item) {
     let header = document.createElement('h3');
     header.innerHTML = Labels[i];
@@ -60,7 +121,6 @@ Tclasses.forEach(function (item) {
     i += 1;
 });
 console.log("reading CSEDegree.txt");
-
-
+*/
 
 

@@ -1,4 +1,50 @@
-course1
-course2
-course3
-course4
+
+University Core Course
+University Writing Course
+Engineering Design
+Moreau First Year Experience
+Intro to Chemical Principles
+Calculus I
+
+University Core Course
+Technical Elective
+Engineering Computing
+Moreau First Year Experience
+Calculus II
+General Physics I
+
+University Core Course
+Discrete Mathematics
+Fundamentals of Computing
+Calculus III
+General Physics II
+
+University Core Course
+Logic Design
+Systems Programming
+Data Structures
+Introduction to Linear Algebra & Differential Equations
+
+University Core Course
+CSE Elective
+Free Elective
+Computer Architecture
+Electric Circuit Analysis
+Introduction to EE
+
+University Core Course
+Operating Systems
+Probability & Statistics
+Electric Circuits
+Electronics
+
+CSE Elective
+CSE Elective
+Free Elective
+CPEG Capstone Design
+Signals & Systems I
+
+University Core Course
+CSE Elective
+CSE Elective
+Ethical and Social Issues

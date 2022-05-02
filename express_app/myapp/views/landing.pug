@@ -21,6 +21,7 @@ block content
 
   body(style='background-color:lightblue;')
    select#selectDegree(onchange='update()')
+    option(value='none') Please Select a Degree
     option(value='CSE')  Computer Science
     option(value='EE') Electrical Engineering
     option(value='CPEG') Computer Engineering
@@ -35,17 +36,11 @@ block content
         
   .flex-container
     #templateArea.flex-child(name='templateArea')
-      | Computer Science 4 Year plan
+      |
                   
     #templateArea.flex-child(name='originalArea')
-      | Drag and Drop Courses below
+      |
 
-  script.
-      function update() {
-      let output = document.getElementById("selectDegree").value;
-      alert("weve updated");
-      console.log(output);
-      }  
   script(src='./template.js').
 
   

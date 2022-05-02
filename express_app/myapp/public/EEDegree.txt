@@ -1,0 +1,51 @@
+
+University Core Course
+University Writing Course
+Engineering Design
+Moreau First Year Experience
+Intro to Chemical Principles
+Calculus I
+
+University Core Course
+Free Elective
+Engineering Computing
+Moreau First Year Experience
+Calculus II
+General Physics I
+
+University Core Course
+Intro to Electric Circuit Analysis
+Intro to Electrical Engineering
+Intro to Computing
+Calculus III
+General Physics II
+
+University Core Course
+Electric Circuits
+Electronics
+Logic Design
+Intro to Linear Algebra & Differential Equations
+
+EE Elective
+Signals and Systems
+Fundamentals of Semiconductors
+Electromagnetic Fields
+Differential Equations
+
+EE Elective
+Technical Elective
+University Core Course
+Free Elective
+Random Phenomena in EE
+
+EE Elective
+Technical Elective
+University Core Course
+Free Elective
+Senior Design I
+
+EE Elective
+Technical Elective
+University Core Course
+Free Elective
+Senior Design II
